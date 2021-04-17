@@ -1,0 +1,30 @@
+body {
+    background-color: lightskyblue;
+}
+
+#canvas {
+    background-color: white;
+    border-color: dodgerblue;
+    border-style: ridge;
+    border-width: 20px;
+    width: 700;
+    height: 700px;
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+input {
+    background-color: white;
+    border-color: dodgerblue;
+    border-style: ridge;
+    border-width: 2px;
+}
+
+button {
+    background-color: white;
+    border-color: dodgerblue;
+    border-style: ridge;
+    border-width: 2px;
+}
