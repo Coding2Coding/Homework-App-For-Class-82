@@ -1,29 +1,29 @@
-var canvas=document.getElementById("canvas");
-var canvasReference=canvas.getContext("2d");
+var canvas = document.getElementById("canvas");
+var canvasReference = canvas.getContext("2d");
 var Event="empty";
-var penColor=document.getElementById("circleColor")
-var width=document.getElementById("width");
+
 canvas.addEventListener("mousedown",mouseDown);
 
 function mouseDown(e) {
-    Event="mousedown";
+    Event = "mousedown";
 }
 
 canvas.addEventListener("mousemove",mouseMove);
 
 function mouseMove(e) {
-    var xPosition=e.clientX-canvas.offsetLeft;
-    var yPosition=e.clientY-canvas.offsetTop;
+    var xPosition = e.clientX-canvas.offsetLeft;
+    var yPosition = e.clientY-canvas.offsetTop;
     
-    if(Event=="mousedown") {
+    if(Event == "mousedown") {
+        var penColor = document.getElementById("circleColor").value;
+        var width = document.getElementById("width").value;
         canvasReference.beginPath();
         canvasReference.strokeStyle=penColor;
         canvasReference.lineWidth=width;
-        canvasReference.moveTo(xPosition,yPosition);
-        canvasReference.arcTo(200,200,20,0,2*Math.PI);
+        canvasReference.arc(xPosition, yPosition, 20, 0, 2*Math.PI);
         canvasReference.stroke();
     }
-
+    }
     canvas.addEventListener("mouseup",mouseUp);
 
     function mouseUp(e) {
@@ -37,6 +37,5 @@ function mouseMove(e) {
     }
 
     function clearCanvas() {
-        canvasReference.clearRect(0,0,canvasReference.width,canvasReference.height);
+        canvasReference.clearRect(0, 0, canvas.width, canvas.height);
     }
-}
